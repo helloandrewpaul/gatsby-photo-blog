@@ -7,16 +7,19 @@ const Footer = () => {
       site {
         siteMetadata {
           author
+          year
         }
       }
     }
   `);
   return (
     <footer>
-      <p>Created by {data.site.siteMetadata.author}, © 2021</p>
+      <p>
+        Created by {data.site.siteMetadata.author}, ©{" "}
+        {data.site.siteMetadata.year}
+      </p>
     </footer>
   );
 };
 
 export default Footer;
-

@@ -3,6 +3,7 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "Andrew Paul",
     author: "Andrew Paul",
+    year: "2021"
   },
   plugins: [
     "gatsby-plugin-sass",
