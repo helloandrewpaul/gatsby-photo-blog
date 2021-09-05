@@ -1,26 +1,21 @@
 import React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout";
-import * as  blogStyles from "./blog.module.scss"
+import * as blogStyles from "./blog.module.scss";
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
-  query{
-    allContentfulBlogPost(
-      sort:{
-        fields:publishedDate,
-        order:DESC
-      }
-    ){
-      edges{
-        node{
-          title
-          slug
-          publishedDate(formatString:"MMMM Do, YYYY")
+    query {
+      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+        edges {
+          node {
+            title
+            slug
+            publishedDate(formatString: "MMMM Do, YYYY")
+          }
         }
       }
     }
-  }
   `);
   return (
     <Layout>
