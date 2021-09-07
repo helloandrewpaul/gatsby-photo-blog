@@ -1050,10 +1050,22 @@
   dependencies:
     "@contentful/rich-text-types" "^14.1.2"
 
+"@contentful/rich-text-react-renderer@^15.3.3":
+  version "15.3.3"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-15.3.3.tgz#a788daefc9ba70156bddf8b409120588aaa070fa"
+  integrity sha512-UyvJ4nJQ0bGNRdHCnulbGDKpacIuBCu+bZG3lek/SHvLEI2R5YTf8LDX0PMIFBR17rCARcsqY6NUMzTdL/pLUA==
+  dependencies:
+    "@contentful/rich-text-types" "^15.3.3"
+
 "@contentful/rich-text-types@^14.1.2":
   version "14.1.2"
   resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-14.1.2.tgz#33162fdbf427891122a96030f806ca9a9cf0e844"
   integrity sha512-XbgZ7op5uyYYszipgQg/bYobF4b+llXyTwS8hISRniQY9xKESz544eP2OGmRc4J3MHx29M7Vmx7TVA/IK65giQ==
+
+"@contentful/rich-text-types@^15.3.3":
+  version "15.3.3"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-15.3.3.tgz#92e478abce9c2dde4e68324c4fddfa5d3161a980"
+  integrity sha512-eT16r2G/bZmVyP2vXUx2n3RWY5W4IaeZJaxFDGFewLUE8Lw8sX+AW3gQAaSe8A2pHxNkOdpotKGOMxGyH7i5cA==
 
 "@endemolshinegroup/cosmiconfig-typescript-loader@3.0.2":
   version "3.0.2"
