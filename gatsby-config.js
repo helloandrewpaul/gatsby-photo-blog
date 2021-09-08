@@ -10,7 +10,7 @@ module.exports = {
     year: '2021',
   },
   plugins: [
-    'gatsby-plugin-react',
+    'gatsby-plugin-react-helmet',
 
     {
       resolve: 'gatsby-source-contentful',

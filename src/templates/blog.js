@@ -5,6 +5,8 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Layout from '../components/layout';
 import { BLOCKS } from '@contentful/rich-text-types';
+import Head from '../components/head'
+
 
 export const query = graphql`
   query ($slug: String!) {
@@ -44,6 +46,7 @@ const Blog = ({ data }) => {
   };
   return (
     <Layout>
+      <Head title={data.contentfulBlogPost.title}/>
       <h1>{data.contentfulBlogPost.title}</h1>
       <p>{data.contentfulBlogPost.publishedDate}</p>
       {documentToReactComponents(
