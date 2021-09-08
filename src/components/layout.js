@@ -1,14 +1,14 @@
-import React from "react";
-import Header from "./header";
-import Footer from "./footer";
-import * as layoutStyles from "./layout.module.scss"
+import React from 'react';
+import Header from './header';
+import Footer from './footer';
+import * as layoutStyles from './layout.module.scss';
 
 const Layout = ({ children }) => {
   return (
     <div className={layoutStyles.container}>
       <div className={layoutStyles.content}>
-      <Header />
-      {children}
+        <Header />
+        {children}
       </div>
       <Footer />
     </div>

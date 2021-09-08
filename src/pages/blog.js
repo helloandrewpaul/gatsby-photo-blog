@@ -1,8 +1,7 @@
-import React from "react";
-import { Link, graphql, useStaticQuery } from "gatsby";
-import Layout from "../components/layout";
-import * as blogStyles from "./blog.module.scss";
-
+import React from 'react';
+import { Link, graphql, useStaticQuery } from 'gatsby';
+import Layout from '../components/layout';
+import * as blogStyles from './blog.module.scss';
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
@@ -13,7 +12,6 @@ const BlogPage = () => {
             title
             slug
             publishedDate(formatString: "MMMM Do, YYYY")
-          
           }
         }
       }
@@ -33,7 +31,7 @@ const BlogPage = () => {
             </li>
           );
         })}
-      </ol>{" "}
+      </ol>{' '}
     </Layout>
   );
 };
