@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { BLOCKS } from '@contentful/rich-text-types';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Layout from '../components/layout';
 import Head from '../components/head'
 import * as blogStyles from './blog.module.scss';
@@ -13,15 +17,40 @@ const BlogPage = () => {
             title
             slug
             publishedDate(formatString: "MMMM Do, YYYY")
+            body {
+              raw
+              references{
+                ... on ContentfulAsset{
+                  contentful_id
+                  title
+                  file{
+                    url
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
   `);
+  const options = {
+    renderNode: {
+       [BLOCKS.EMBEDDED_ASSET]: node => {
+          console.log(node);
+          const imageID = node.data.target.sys.id;
+          const {
+             file: {url}, 
+             title
+          } = data.allContentfulBlogPost.body.references.find(({contentful_id: id}) => id === imageID);
+
+          return <img src={url} alt={title} />
+       }
+    }
+ }
   return (
     <Layout>
       <Head title='Blog'/>
-      <h1>Blog</h1>
       <ol className={blogStyles.posts}>
         {data.allContentfulBlogPost.edges.map((edge) => {
           return (
@@ -29,6 +58,7 @@ const BlogPage = () => {
               <Link to={`/blog/${edge.node.slug}`}>
                 <h2>{edge.node.title}</h2>
               </Link>
+              {documentToReactComponents(JSON.parse(data.allContentfulBlogPost.body.raw, options))}
               <p>{edge.node.publishedDate}</p>
             </li>
           );
