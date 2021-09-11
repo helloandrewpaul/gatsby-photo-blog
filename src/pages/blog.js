@@ -18,21 +18,21 @@ const BlogPage = () => {
             slug
             publishedDate(formatString: "MMMM Do, YYYY")
             body {
-              raw
-              references{
-                ... on ContentfulAsset{
-                  contentful_id
-                  title
-                  file{
-                    url
-                  }
-                }
-              }
+              raw       
             }
           }
         }
       }
+      allContentfulAsset {
+        edges {
+          node {
+            title
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+      }
     }
+    
   `);
   const options = {
     renderNode: {
@@ -47,7 +47,8 @@ const BlogPage = () => {
           return <img src={url} alt={title} />
        }
     }
- }
+  }
+  // 
   return (
     <Layout>
       <Head title='Blog'/>
