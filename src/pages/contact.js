@@ -8,7 +8,6 @@ const ContactPage = () => {
     <Layout>
       <Head title='Contact'/>
       <h1>Contact</h1>
-      <p>Contact me mother fucker</p>
     </Layout>
   );
 };

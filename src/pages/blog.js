@@ -49,8 +49,7 @@ const BlogPage = () => {
     }
   }
   // 
-  return (
-    <Layout>
+  return (<>
       <Head title='Blog'/>
       <ol className={blogStyles.posts}>
         {data.allContentfulBlogPost.edges.map((edge) => {
@@ -59,13 +58,12 @@ const BlogPage = () => {
               <Link to={`/blog/${edge.node.slug}`}>
                 <h2>{edge.node.title}</h2>
               </Link>
-              {documentToReactComponents(JSON.parse(data.allContentfulBlogPost.body.raw, options))}
               <p>{edge.node.publishedDate}</p>
             </li>
           );
         })}
       </ol>{' '}
-    </Layout>
+   </>
   );
 };
 //

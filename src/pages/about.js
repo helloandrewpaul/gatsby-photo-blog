@@ -9,8 +9,6 @@ const AboutPage = () => {
     <Layout>
       <Head title="About"/>
       <h1>About</h1>
-      <p>This is what I'm about</p>
-      <Link to='/contact'>Contact me</Link>
     </Layout>
   );
 };
