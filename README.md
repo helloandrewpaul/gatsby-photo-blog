@@ -5,4 +5,6 @@
 <h1 align="center">
 Personal photo blog built with Gatsby, Contentful and Scss</h1>
 
+<p>Work in progess</p>
+
 
